@@ -1,0 +1,1 @@
+//This dir holds files for local datastores: shared_preferences, hive, etc.
