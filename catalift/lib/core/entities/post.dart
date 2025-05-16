@@ -8,7 +8,9 @@ class Post {
   String content;
   List<String> images;
   String timeStamp;
+  int stars;
+  int comments;
 
   Post(this.postId, this.userId, this.tags, this.title, this.content,
-      this.images, this.timeStamp);
+      this.images, this.timeStamp, this.comments, this.stars);
 }

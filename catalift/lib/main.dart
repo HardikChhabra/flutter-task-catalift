@@ -1,3 +1,6 @@
+import 'package:catalift/presentation/base_page.dart';
+import 'package:catalift/presentation/common/components/Navbar.dart';
+import 'package:catalift/presentation/common/theme/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,12 +15,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      themeMode: ThemeMode.system,
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      home: const Scaffold(
+        body: BasePage(),
       ),
-      home: const Placeholder(),
     );
   }
 }
