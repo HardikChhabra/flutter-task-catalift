@@ -51,14 +51,14 @@ class _BasePageState extends State<BasePage> {
                 icon: Icon(Icons.home_outlined), label: "Home"),
             NavigationDestination(
                 icon: Icon(Icons.explore_outlined), label: "Explore Mentors"),
-            NavigationDestination(icon: Icon(Icons.menu_book), label: "Courses")
+            NavigationDestination(icon: Icon(Icons.menu_book_outlined), label: "Courses")
           ],
         ),
       ),
       body: <Widget>[
         const HomePage(),
-        const Placeholder(),
-        const Placeholder()
+        const Placeholder(), //for explore page
+        const Placeholder() //for courses page
       ][currentPageIndex],
     );
   }

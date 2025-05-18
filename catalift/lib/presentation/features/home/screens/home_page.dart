@@ -1,5 +1,7 @@
+import 'package:catalift/core/entities/user.dart';
 import 'package:catalift/presentation/features/home/bloc/post_service.dart';
 import 'package:catalift/presentation/features/home/widgets/post_component.dart';
+import 'package:catalift/presentation/features/home/widgets/scrollable_feed_component.dart';
 import 'package:catalift/presentation/features/home/widgets/search_component.dart';
 import 'package:flutter/material.dart';
 
@@ -18,26 +20,30 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    List<Post>allPosts = _postService.getAllPosts();
-    return Scaffold(
-      body: Column(
-        children: [
-          //Search bar and add icon
-          SearchComponent(
-            controller: searchController,
-          ),
-          //Scrollable Posts
-          SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: ListView.builder(
-              itemBuilder: (BuildContext context, int index) {
-                return PostComponent(post: allPosts[index]);
-              },
-              itemCount: allPosts.length,
-            ),
-          )
-        ],
-      ),
+    List<Post> allPosts = _postService.getAllPosts();
+    Post post_1 = allPosts[0];
+    User userPost1 = User(
+        userId: "1",
+        name: "Akhilesh Yadav",
+        email: "test@gmail.com",
+        role: "Founder",
+        companyName: "Google",
+        profileURL: "");
+    return Column(
+      children: [
+        SearchComponent(
+          controller: searchController,
+          onSearch: (query) {},
+        ),
+        ScrollableFeedComponent(
+          postsList: allPosts,
+          user: userPost1,
+        ),
+        //PostComponent(
+        //  post: post_1,
+        //  user: userPost1,
+        //)
+      ],
     );
   }
 }

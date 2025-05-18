@@ -8,6 +8,11 @@ class User {
   String companyName;
   String profileURL;
 
-  User(this.userId, this.name, this.email, this.role, this.companyName,
-      this.profileURL);
+  User(
+      {required this.userId,
+      required this.name,
+      required this.email,
+      required this.role,
+      required this.companyName,
+      required this.profileURL});
 }

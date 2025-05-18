@@ -2,12 +2,9 @@ import 'package:flutter/material.dart';
 
 class SearchComponent extends StatelessWidget {
   final TextEditingController controller;
+  final Function(String) onSearch;
 
-  onChanged(String controllerString) {
-    // TODO: implement onChanged
-  }
-
-  const SearchComponent({super.key, required this.controller});
+  const SearchComponent({super.key, required this.controller, required this.onSearch});
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +17,10 @@ class SearchComponent extends StatelessWidget {
             controller: controller,
             hintText: "Search",
             leading: const Icon(Icons.search),
-            onChanged: onChanged,
+            onChanged: onSearch,
           ),
           const SizedBox(width: 30,),
-          const Icon(Icons.add_rounded, color: Color(0xFF000060),size: 40,)
+          const Icon(Icons.add_box_outlined, color: Color(0xFF000060),size: 40,)
         ],
       ),
     );
